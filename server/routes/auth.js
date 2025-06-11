@@ -96,12 +96,7 @@ router.get('/profile', verifyToken, async (req, res) => {
 });
 
 router.get('/expenses', async (req, res) => {
-  // Sample hardcoded data
-  res.json([
-    { _id: '1', title: 'Groceries', amount: 50 },
-    { _id: '2', title: 'Gym Membership', amount: 30 },
-    { _id: '3', title: 'Netflix', amount: 15 }
-  ]);
+  res.json([]);
 });
 
 export default router;

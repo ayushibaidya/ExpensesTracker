@@ -16,7 +16,7 @@ const Login = () => {
       });
       const token = res.data.token;
       localStorage.setItem('token', token);
-      alert('Login successful!');
+      //alert('Login successful!');
       navigate('/dashboard');
     } catch (err) {
       alert('Login failed');
@@ -52,6 +52,13 @@ const Login = () => {
             Login
           </button>
         </form>
+        
+        <button
+          onClick={() => navigate('/')}
+          className="mt-4 w-full text-center text-blue-600 hover:underline"
+        >
+          ← Back to Home
+        </button>
       </div>
     </div>
   );

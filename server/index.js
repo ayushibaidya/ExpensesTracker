@@ -3,6 +3,7 @@ import dotenv from 'dotenv';         // ES module import
 import express from 'express';
 import mongoose from 'mongoose';
 import authRoutes from './routes/auth.js';
+import expenseRoutes from './routes/expense.js';
 import cors from 'cors';
 
 dotenv.config();                     // Load .env variables
@@ -29,6 +30,7 @@ mongoose.connect(MONGO_URI, {
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/auth/expenses', expenseRoutes);
 
 // Start server
 app.listen(PORT, () => {

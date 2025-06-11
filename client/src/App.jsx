@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navigation from './components/NavigationBar.jsx'; // imported Navigation component
 import Home from './pages/HomePage.jsx';
 import Login from './pages/LoginPage.jsx';
 import Register from './pages/RegisterPage.jsx';
@@ -9,36 +10,7 @@ import Dashboard from './pages/DashboardPage.jsx';
 function App() {
   return (
     <Router>
-      <nav style={{ display: 'flex', gap: 20, justifyContent: 'center', marginTop: 20 }}>
-        <NavLink
-          to="/"
-          style={({ isActive }) => ({
-            fontWeight: isActive ? 'bold' : 'normal',
-            textDecoration: isActive ? 'underline' : 'none',
-          })}
-        >
-          Home
-        </NavLink>
-        <NavLink
-          to="/login"
-          style={({ isActive }) => ({
-            fontWeight: isActive ? 'bold' : 'normal',
-            textDecoration: isActive ? 'underline' : 'none',
-          })}
-        >
-          Login
-        </NavLink>
-        <NavLink
-          to="/register"
-          style={({ isActive }) => ({
-            fontWeight: isActive ? 'bold' : 'normal',
-            textDecoration: isActive ? 'underline' : 'none',
-          })}
-        >
-          Register
-        </NavLink>
-      </nav>
-
+      <Navigation/> 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
